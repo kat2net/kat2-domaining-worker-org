@@ -3,7 +3,8 @@ header("Access-Control-Allow-Origin: *");
 header('Content-Type: application/json');
 
 $info = array(
-    'v' => 0,
+    'v' => '0.0.0.1',
+    'name' => getenv('name'),
     'list' => array(
         'active' => false,
         'id' => 0,
