@@ -34,7 +34,7 @@ if(
                 'domains_done' => $domains_done,
                 'domains_left' => $domains_left,
                 'domains_total' => $domains_total,
-                'percentage' => ($domains_done / $domains_total) * 100
+                'percentage' => number_format(($domains_done / $domains_total) * 100, 4)
             )
         );
 }else if(
