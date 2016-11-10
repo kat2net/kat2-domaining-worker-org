@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header('Content-Type: application/json');
 
-$version = '0.0.2';
+$version = '0.0.3';
 
 if(
     (file_exists('/app/data/lock'))
@@ -15,16 +15,26 @@ if(
     &&
     (file_exists('/app/data/domains_total'))
 ){
+    $id = file_get_contents('/app/data/list_id');
+    $domains_done = file_get_contents('/app/data/domains_done');
+    $domains_left = file_get_contents('/app/data/domains_left');
+    $domains_total = file_get_contents('/app/data/domains_total');
+
+    $id = (int)$id;
+    $domains_done = (int)$domains_done;
+    $domains_left = (int)$domains_left;
+    $domains_total = (int)$domains_total;
+
     $info = array(
             'v' => $version,
             'name' => getenv('name'),
             'list' => array(
-                'active' => false,
-                'id' => 0,
-                'domains_done' => 0,
-                'domains_left' => 0,
-                'domains_total' => 0,
-                'percentage' => 0
+                'active' => true,
+                'id' => $id,
+                'domains_done' => $domains_done,
+                'domains_left' => $domains_left,
+                'domains_total' => $domains_total,
+                'percentage' => ($domains_done / $domains_total) * 100
             )
         );
 }else{
