@@ -21,9 +21,6 @@ if($list){
 
         //domains_done
         file_put_contents('/app/data/domains_done', $i);
-        
-        //domains_left
-        file_put_contents('/app/data/domains_left', $c - $i);
 
         $i++;
     }
