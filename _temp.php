@@ -1,8 +1,10 @@
 <?php
 
+$a = time()
+
 $domains = array();
 
-$range = range(0, 1);
+$range = range(0, 20);
 foreach($range as $r){
     $domains[] = $r.'st.org';
 }
@@ -19,3 +21,4 @@ foreach($domains as $domain){
 
     echo "\n\n";
 }
+echo time() - $a;
