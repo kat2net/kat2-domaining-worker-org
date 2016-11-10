@@ -4,7 +4,7 @@ $a = time();
 
 $domains = array();
 
-$range = range(0, 20);
+$range = range(0, 300);
 foreach($range as $r){
     $domains[] = $r.'st.org';
 }
