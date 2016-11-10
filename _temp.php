@@ -1,6 +1,6 @@
 <?php
 
-$a = time()
+$a = time();
 
 $domains = array();
 
